@@ -1,0 +1,20 @@
+[package]
+name = "text-analysis-api"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[workspace]
+members = [
+    "morphological_analysis"
+]
+
+[dependencies]
+axum = "0.5.15"
+hyper = { version = "0.14.20", features = ["full"] }
+tokio = { version = "1.20.1", features = ["full"] }
+tracing = "0.1.36"
+tracing-subscriber = { version = "0.3.15", features = ["json", "env-filter", "local-time"] }
+
+morphological_analysis = { path = "./morphological_analysis" }
