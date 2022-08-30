@@ -26,3 +26,35 @@ impl Detail {
         self.0.contains(&"名詞".to_string()) || self.0.contains(&"カスタム名詞".to_string())
     }
 }
+
+#[cfg(test)]
+mod test {
+    use super::*;
+
+    #[test]
+    fn test_exclude_non_nouns() {
+        let token = Token {
+            text: "東京スカイツリー",
+            detail: vec!["名詞".into()],
+        };
+        let exclude_token = Token {
+            text: "の",
+            detail: vec!["助詞".into()],
+        };
+        let tokens = Tokens(vec![token, exclude_token]);
+        let expected = Nouns(vec![Noun("東京スカイツリー".into())]);
+        assert_eq!(tokens.exclude_non_nouns(), expected)
+    }
+
+    #[test]
+    fn test_is_nouns() {
+        let detail = Detail(vec!["名詞".into()]);
+        assert_eq!(detail.is_nouns(), true)
+    }
+
+    #[test]
+    fn test_is_not_nouns() {
+        let detail = Detail(vec!["助詞".into()]);
+        assert_eq!(detail.is_nouns(), false)
+    }
+}

@@ -28,3 +28,22 @@ pub struct CountByNoun {
     pub noun: Noun,
     pub counts: usize,
 }
+
+#[cfg(test)]
+mod test {
+    use super::*;
+
+    #[test]
+    fn test_aggregate_group_by_word() {
+        let nouns = Nouns(vec![
+            Noun("東京スカイツリー".into()),
+            Noun("東京スカイツリー".into()),
+        ]);
+
+        let expected = vec![CountByNoun {
+            noun: Noun("東京スカイツリー".into()),
+            counts: 2,
+        }];
+        assert_eq!(nouns.aggregate_group_by_word(), expected)
+    }
+}

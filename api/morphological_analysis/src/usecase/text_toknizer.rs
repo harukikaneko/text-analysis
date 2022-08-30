@@ -13,8 +13,7 @@ pub fn aggregate_group_by_noun(word: String) -> LinderaResult<Vec<CountByNoun>> 
     let tokenizer = Tokenizer::with_config(config)?;
     let tokens = Tokens(tokenizer.tokenize(&word)?);
     let exclude_non_nouns = tokens.exclude_non_nouns();
-    let group_by_word = exclude_non_nouns.aggregate_group_by_word();
-    Ok(group_by_word)
+    Ok(exclude_non_nouns.aggregate_group_by_word())
 }
 
 #[mry::mry]
