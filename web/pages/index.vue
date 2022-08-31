@@ -2,8 +2,6 @@
 import { fetchCountsByNoun } from "~~/gateway/getCountsByNoun";
 import { CountsByNoun } from "~~/types/noun";
 
-const ctx = useRuntimeConfig();
-
 const tokens = ref<CountsByNoun[]>([]);
 const handleOnChange = async (x: InputEvent) => {
   const value = (x.target as HTMLInputElement).value;
