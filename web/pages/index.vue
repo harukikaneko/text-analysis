@@ -20,7 +20,7 @@ const handleOnChange = async (x: InputEvent) => {
           <th>count</th>
         </tr>
       </thead>
-      <tbody v-for="(item, index) in tokens" :key=index>
+      <tbody v-for="(item, index) in tokens" :key="index">
         <tr>
           <td>{{ item.noun }}</td>
           <td>{{ item.counts }}</td>

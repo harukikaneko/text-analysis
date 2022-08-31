@@ -1,9 +1,11 @@
-export const fetchCountsByNoun = async (query: string) => await useAsyncData(
+export const fetchCountsByNoun = async (query: string) =>
+  await useAsyncData(
     "get",
-    () => $fetch("/api/countByNoun", {
+    () =>
+      $fetch("/api/countByNoun", {
         params: {
-            query,
+          query,
         },
-    }),
+      }),
     { initialCache: false }
-);
+  );

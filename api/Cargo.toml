@@ -11,8 +11,7 @@ members = [
 ]
 
 [dependencies]
-axum = "0.5.15"
-hyper = { version = "0.14.20", features = ["full"] }
+actix-web = "4.1.0"
 tokio = { version = "1.20.1", features = ["full"] }
 tracing = "0.1.36"
 tracing-subscriber = { version = "0.3.15", features = ["json", "env-filter", "local-time"] }

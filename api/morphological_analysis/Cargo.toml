@@ -6,8 +6,7 @@ edition = "2021"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
-axum = "0.5.15"
-hyper = { version = "0.14.20", features = ["full"] }
+actix-web = "4.1.0"
 itertools = "0.10.3"
 lindera = "0.14.0"
 mry = "0.2.5"
