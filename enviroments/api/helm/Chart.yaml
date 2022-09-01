@@ -1,0 +1,4 @@
+apiVersion: v1
+appVersion: "1.0"
+name: text-analysis-api
+version: 1.0.0

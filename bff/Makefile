@@ -5,7 +5,7 @@ install:
 	go mod download
 
 build:
-	go build -o target/rnd-management-bff
+	go build -o target/bff
 
 clean:
 	rm -rf ./target && go clean && go mod tidy && rm -f di/wire_gen.go
