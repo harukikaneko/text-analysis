@@ -1,0 +1,5 @@
+replicas: 1
+name: text-analysis-web
+namespace: text-analysis
+color: blue
+tag: latest

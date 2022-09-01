@@ -1,0 +1,6 @@
+replicas: 1
+name: text-analysis-bff
+namespace: text-analysis
+color: blue
+tag: latest
+text_analysis_endpoint: http://text-analysis-svc:3008

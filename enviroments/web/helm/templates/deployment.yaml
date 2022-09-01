@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+metadata:
+  name: {{ .Values.name }}
+  namespace: {{ .Values.namespace }}
+kind: Deployment
+spec:
+  replicas: {{ .Values.replicas }}
+  selector:
+    matchLabels:
+      app: {{ .Values.name }}
+      version: {{ .Values.color }}
+  template:
+    metadata:
+      labels:
+        app: {{ .Values.name }}
+        version: {{ .Values.color }}
+        namespace: {{ .Values.namespace }}
+      annotations:
+        sidecar.istio.io/inject: "true"
+    spec:
+      containers:
+      - name: {{ .Values.name }}
+        image: niku100g/text-analysis-web:{{ .Values.tag }}
+        imagePullPolicy: Always
+        ports:
+          - containerPort: 3000
